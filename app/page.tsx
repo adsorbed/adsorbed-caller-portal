@@ -1,12 +1,12 @@
 import Link from 'next/link'
 
 const CALLERS = [
+  { name: 'Joy', id: 'joy' },
   { name: 'Tammy', id: 'tammy' },
   { name: 'Miche', id: 'miche' },
   { name: 'Celeste', id: 'celeste' },
   { name: 'Sitarah', id: 'sitarah' },
   { name: 'Zama', id: 'zama' },
-  { name: 'Warren', id: 'warren' },
   { name: 'Deje', id: 'deje' },
   { name: 'Toni', id: 'toni' },
   { name: 'Natasha', id: 'natasha' },
