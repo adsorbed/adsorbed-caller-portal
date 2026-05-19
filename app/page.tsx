@@ -11,6 +11,7 @@ const CALLERS = [
   { name: 'Toni', id: 'toni' },
   { name: 'Natasha', id: 'natasha' },
   { name: 'Carlos', id: 'carlos' },
+  { name: 'Sarah', id: 'sarah' },
 ]
 
 export default function Home() {
