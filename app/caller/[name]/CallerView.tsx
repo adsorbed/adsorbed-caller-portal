@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 interface CalendlyLink { name: string; url: string }
-interface CallerClient { name: string; hours: number; tag: string | null; campaign: string | null; sjp: string | null; ghl_url: string | null; brief_url: string | null; script: string | null; calendly: CalendlyLink[] }
+interface CallerClient { name: string; hours: number; tag: string | null; campaign: string | null; sjp: string | null; ghl_url: string | null; brief_url: string | null; lead_sheet_url: string | null; script: string | null; calendly: CalendlyLink[] }
 interface CallerData { caller: { name: string; shift_week: string | null; shift_sat: string | null; shift_other: string | null }; clients: CallerClient[] }
 
 function ShiftBadge({ label, type }: { label: string; type: 'week' | 'sat' | 'other' }) {
@@ -61,7 +61,7 @@ function ClientCard({ client }: { client: CallerClient }) {
           </>}
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {client.ghl_url && <a href={client.ghl_url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600, background: '#185FA5', color: '#E6F1FB', textDecoration: 'none' }}>Open in GHL ↗</a>}
-            {client.brief_url && <a href={client.brief_url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600, background: '#fff', color: '#111', textDecoration: 'none', border: '1px solid #e5e5e5' }}>View briefing doc ↗</a>}
+            {client.lead_sheet_url && <a href={client.lead_sheet_url} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, fontSize: 13, fontWeight: 600, background: "#fff", color: "#111", textDecoration: "none", border: "1px solid #e5e5e5" }}>Open lead sheet ↗</a>}{client.brief_url && <a href={client.brief_url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600, background: '#fff', color: '#111', textDecoration: 'none', border: '1px solid #e5e5e5' }}>View briefing doc ↗</a>}
           </div>
         </div>
       )}

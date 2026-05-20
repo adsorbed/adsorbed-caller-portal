@@ -51,7 +51,8 @@ export async function getCallerData(callerName: string): Promise<CallerData | nu
     return {
       name: client.name || a.client_id, hours: parseFloat(a.hours) || 0,
       tag: a.tag || null, campaign: client.campaign || null, sjp: client.sjp || null,
-      ghl_url: client.ghl_url || null, brief_url: client.brief_url || null, script: client.script || null,
+      ghl_url: client.ghl_url || null, brief_url: client.brief_url || null,
+        lead_sheet_url: client.lead_sheet_url || null, script: client.script || null,
       calendly: calendlyNames.map((name: string, i: number) => ({ name, url: calendlyUrls[i] || '' })),
     }
   })
@@ -84,7 +85,8 @@ export async function getAllCallersData(): Promise<CallerData[]> {
       return {
         name: client.name || a.client_id, hours: parseFloat(a.hours) || 0,
         tag: a.tag || null, campaign: client.campaign || null, sjp: client.sjp || null,
-        ghl_url: client.ghl_url || null, brief_url: client.brief_url || null, script: client.script || null,
+        ghl_url: client.ghl_url || null, brief_url: client.brief_url || null,
+        lead_sheet_url: client.lead_sheet_url || null, script: client.script || null,
         calendly: calendlyNames.map((name: string, i: number) => ({ name, url: calendlyUrls[i] || '' })),
       }
     })
