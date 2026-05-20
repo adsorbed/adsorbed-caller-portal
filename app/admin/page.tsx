@@ -120,8 +120,8 @@ export default async function AdminPage() {
                             <td style={{ padding: '10px 16px' }}>
                               {client.tag ? <span style={{ background: '#FAEEDA', color: '#633806', fontWeight: 500, fontSize: 11, padding: '2px 8px', borderRadius: 6 }}>{client.tag}</span> : <span style={{ color: '#ccc' }}>—</span>}
                             </td>
-                            <td style={{ padding: '10px 16px' }}>
-                              {client.sjp === 'Yes' ? <span style={{ background: '#E6F1FB', color: '#0C447C', fontWeight: 500, fontSize: 11, padding: '2px 8px', borderRadius: 6 }}>SJP</span> : <span style={{ color: '#ccc' }}>—</span>}
+                            <td style={{ padding: '10px 16px', fontSize: 16, textAlign: 'center' as const }}>
+                              {client.sjp === 'Yes' ? '✅' : '❌'}
                             </td>
                           </tr>
                         ))}
