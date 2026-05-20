@@ -33,7 +33,7 @@ export async function getCallerData(callerName: string): Promise<CallerData | nu
   const sheets = google.sheets({ version: 'v4', auth })
   const [callersRes, clientsRes, assignmentsRes] = await Promise.all([
     sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: '_Callers!A:F' }),
-    sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: '_Clients!A:J' }),
+    sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: '_Clients!A:K' }),
     sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: '_Assignments!A:E' }),
   ])
   const callers = rowsToObjects(callersRes.data.values as string[][])
@@ -67,7 +67,7 @@ export async function getAllCallersData(): Promise<CallerData[]> {
   const sheets = google.sheets({ version: 'v4', auth })
   const [callersRes, clientsRes, assignmentsRes] = await Promise.all([
     sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: '_Callers!A:F' }),
-    sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: '_Clients!A:J' }),
+    sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: '_Clients!A:K' }),
     sheets.spreadsheets.values.get({ spreadsheetId: SHEET_ID, range: '_Assignments!A:E' }),
   ])
   const callers = rowsToObjects(callersRes.data.values as string[][])
