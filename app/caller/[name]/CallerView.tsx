@@ -46,7 +46,7 @@ function ClientCard({ client }: { client: CallerClient }) {
           </div>
           {client.script && <>
             <div style={{ fontSize: 11, color: '#999', textTransform: 'uppercase' as const, letterSpacing: '0.05em', marginBottom: 8 }}>Opening script</div>
-            <div style={{ background: '#f8f8f8', borderLeft: '3px solid #378ADD', borderRadius: '0 8px 8px 0', padding: '12px 14px', fontSize: 13, color: '#444', lineHeight: 1.65, marginBottom: 16 }}>{client.script}</div>
+            {client.brief_url ? (<a href={client.brief_url} target="_blank" rel="noopener noreferrer" style={{ display: "block", textDecoration: "none" }}><div style={{ background: "#f8f8f8", borderLeft: "3px solid #378ADD", borderRadius: "0 8px 8px 0", padding: "12px 14px", fontSize: 13, color: "#444", lineHeight: 1.65, marginBottom: 16, cursor: "pointer" }}>{client.script}</div></a>) : (<div style={{ background: "#f8f8f8", borderLeft: "3px solid #378ADD", borderRadius: "0 8px 8px 0", padding: "12px 14px", fontSize: 13, color: "#444", lineHeight: 1.65, marginBottom: 16 }}>{client.script}</div>)}
           </>}
           {client.calendly && client.calendly.length > 0 && <>
             <div style={{ fontSize: 11, color: '#999', textTransform: 'uppercase' as const, letterSpacing: '0.05em', marginBottom: 8 }}>Adviser booking links</div>
