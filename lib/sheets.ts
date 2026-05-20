@@ -20,7 +20,7 @@ function rowsToObjects(rows: string[][]): Record<string, string>[] {
 export interface CalendlyLink { name: string; url: string }
 export interface CallerClient {
   name: string; hours: number; tag: string | null; campaign: string | null
-  sjp: string | null; ghl_url: string | null; brief_url: string | null
+  sjp: string | null; ghl_url: string | null; brief_url: string | null; lead_sheet_url: string | null
   script: string | null; calendly: CalendlyLink[]
 }
 export interface CallerData {
