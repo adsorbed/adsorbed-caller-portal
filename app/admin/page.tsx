@@ -1,3 +1,5 @@
+export const revalidate = 0
+
 import Link from 'next/link'
 import { STATIC_CALLERS } from '../../data/callers'
 import { CallerData } from '../../lib/sheets'

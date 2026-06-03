@@ -1,3 +1,5 @@
+export const revalidate = 0
+
 import { notFound } from 'next/navigation'
 import CallerView from './CallerView'
 import { STATIC_CALLERS } from '../../../data/callers'
