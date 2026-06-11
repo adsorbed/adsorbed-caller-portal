@@ -83,7 +83,8 @@ export default function AnalyticsPage() {
       ]);
       setClients(c);
       const latest: Record<string, HealthRow> = {};
-      h.forEach(row => { if (!latest[row.client_id]) latest[row.client_id] = row; });
+      const activeIds = new Set(c.map((cl: Client) => cl.id));
+      h.forEach(row => { if (!latest[row.client_id] && activeIds.has(row.client_id)) latest[row.client_id] = row; });
       setHealth(Object.values(latest));
       setAppts(a);
       setUpdatedAt(new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
